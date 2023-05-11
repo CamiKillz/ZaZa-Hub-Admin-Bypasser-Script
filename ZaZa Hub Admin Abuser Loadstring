@@ -1,0 +1,100 @@
+--[[
+___          _                     _                     
+  / __\___   __| |  ___   _ __  __ _ | |_  _   _  _ __ ___  
+ / _\ / _ \ / _` | / _ \ | '__|/ _` || __|| | | || '_ ` _ \ 
+/ /  |  __/| (_| || (_) || |  | (_| || |_ | |_| || | | | | |
+\/    \___| \__,_| \___/ |_|   \__,_| \__| \__,_||_| |_| |_|
+
+Fedoratum Admin Abuser
+
+Games that it works well on :
+FREE ADMIN (This is the main game)
+
+(Other admin games works but might be broken)
+
+Since im a nice guy i will leave this open source hahehahee, credits to me guys please or else :gun emoji:
+
+Made By Fedoratum
+--]]
+-- // Set your admin prefix // --
+local AdminPrefix = ";"
+-- // It will automatically set it // --
+-- It does not accept more than 2 characters
+-- or an unknown character
+
+-- // Option // --
+
+local AffectAllPlayer = true
+-- false affects not yourself but others
+-- true affects everyone including you
+
+
+-- // Hider does not hide when someone use logs
+
+hider = [[
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+]]
+
+function GetPlr(String)
+   local Foundex = {}
+   local strl = String:lower()
+   if strl == "others" then
+       for i,v in pairs(game.Players:GetPlayers()) do
+           if v.Name ~= game.Players.LocalPlayer.Name then
+               table.insert(Foundex,v.Name)
+           end
+       end
+   else
+       for i,v in pairs(game.Players:GetPlayers()) do
+if v.Name ~= game.Players.LocalPlayer.Name then
+           if v.Name:lower():sub(1, #String) == String:lower() then
+               table.insert(Foundex,v.Name)
+           end
+       end    
+   end
+end
+return Foundex
+end
+
+function GetPlayer(String)
+   local Found = {}
+   local strl = String:lower()
+   if strl == "all" then
+       for i,v in pairs(game.Players:GetPlayers()) do
+           table.insert(Found,v.Name)
+       end
+   elseif strl == "others" then
+       for i,v in pairs(game.Players:GetPlayers()) do
+           if v.Name ~= game.Players.LocalPlayer.Name then
+               table.insert(Found,v.Name)
+           end
+       end   
+elseif strl == "me" then
+... (838 lines left)
